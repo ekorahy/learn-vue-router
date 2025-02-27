@@ -1,26 +1,11 @@
+<script setup>
+import NavigationList from '/src/components/molecules/NavigationList.vue'
+</script>
+
 <template>
   <header>
     <nav>
-      <ul>
-        <li>
-          <router-link to="/">Home</router-link>
-        </li>
-        <li>
-          <router-link to="/about">About</router-link>
-        </li>
-        <li>
-          <router-link to="/brazil">Brazil</router-link>
-        </li>
-        <li>
-          <router-link to="/hawaii">Hawaii</router-link>
-        </li>
-        <li>
-          <router-link to="/jamaica">Jamaica</router-link>
-        </li>
-        <li>
-          <router-link to="/panama">Panama</router-link>
-        </li>
-      </ul>
+      <NavigationList />
     </nav>
   </header>
   <main><router-view></router-view></main>
