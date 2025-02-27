@@ -1,12 +1,14 @@
 <script setup>
-import navigations from '@/data/constans/navigations'
+import sourceData from '@/data/locale/data.json'
+const destinations = sourceData.destinations
+
 import NavigationItem from '../atoms/NavigationItem.vue'
 </script>
 
 <template>
   <ul>
-    <li v-for="navigation in navigations" :key="navigation.id">
-      <NavigationItem :name="navigation.name" :path="navigation.path" />
+    <li v-for="navigation in destinations" :key="navigation.id">
+      <NavigationItem :name="navigation.name" :id="navigation.id" :slug="navigation.slug" />
     </li>
   </ul>
 </template>

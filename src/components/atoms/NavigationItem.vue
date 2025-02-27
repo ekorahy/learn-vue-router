@@ -1,7 +1,9 @@
 <script setup>
-defineProps(['name', 'path'])
+defineProps(['name', 'id', 'slug'])
 </script>
 
 <template>
-  <router-link :to="path">{{ name }}</router-link>
+  <router-link :to="{ name: 'destination.show', params: { id: id, slug: slug } }">{{
+    name
+  }}</router-link>
 </template>
