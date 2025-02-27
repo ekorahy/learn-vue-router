@@ -4,6 +4,7 @@ import NavigationList from '/src/components/molecules/NavigationList.vue'
 
 <template>
   <header>
+    <router-link to="/">Vue School Travel App</router-link>
     <nav>
       <NavigationList />
     </nav>
