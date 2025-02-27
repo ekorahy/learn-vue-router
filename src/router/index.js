@@ -29,7 +29,7 @@ const routes = [
   },
   {
     path: '/destination/:id',
-    name: 'Destination detail',
+    name: 'destination.show',
     component: () => import('@/views/DestinationShow.vue'),
   }
 ]
