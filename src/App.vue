@@ -1,5 +1,7 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import NavigationList from '/src/components/molecules/NavigationList.vue'
+const route = useRoute()
 </script>
 
 <template>
@@ -9,5 +11,5 @@ import NavigationList from '/src/components/molecules/NavigationList.vue'
       <NavigationList />
     </nav>
   </header>
-  <main><router-view></router-view></main>
+  <main><router-view :key="route.path"></router-view></main>
 </template>

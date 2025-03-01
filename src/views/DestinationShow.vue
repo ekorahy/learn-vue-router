@@ -1,15 +1,21 @@
 <script setup>
-import sourceData from '@/data/locale/data.json'
-import { computed } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
+const destination = ref(null)
 
-const destinationId = computed(() => parseInt(route.params.id))
+const fetchData = async () => {
+  try {
+    const response = await fetch(`https://travel-dummy-api.netlify.app/${route.params.slug}.json`)
+    destination.value = await response.json()
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    destination.value = null
+  }
+}
 
-const destination = computed(() => {
-  return sourceData.destinations.find((dest) => dest.id === destinationId.value)
-})
+fetchData()
 </script>
 
 <template>
